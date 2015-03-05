@@ -1,0 +1,21 @@
+{
+  "name": "myecommerce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "lab -v tests/"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "good": "^5.1.2",
+    "good-console": "^4.1.0",
+    "hapi": "^8.2.0"
+  },
+  "devDependencies": {
+    "code": "^1.3.0",
+    "lab": "^5.4.0",
+    "superagent": "^0.21.0"
+  }
+}
