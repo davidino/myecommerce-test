@@ -26,7 +26,7 @@ lab.experiment('requests', function(){
   })
 
   lab.test('should return a 404 when an item does not exist', function(done){
-    request.get('http://localhost:3000/item/1')
+    request.get('http://localhost:3000/item/2')
       .set('Accept', 'application/json')
       .end(function(res){
         Code.expect(res.statusCode).to.equal(404)
