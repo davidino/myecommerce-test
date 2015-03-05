@@ -1,28 +1,12 @@
 var Hapi = require('hapi')
-var repository = require('./repository')
 var Good = require('good');
+var controller = require('./controller')
 
 var server = new Hapi.Server();
 server.connection({ port: 3000 });
 
-server.route({ method: 'GET', path: '/items', handler: getItems})
-server.route({ method: 'GET', path: '/item/{id}', handler: getItem})
-
-function getItem (request, reply) {
-  try {
-    reply(repository.findOne(request.params.id));
-  } catch (error) {
-    reply('The page was not found').code(404);
-  }
-}
-
-function getItems (request, reply) {
-  reply([
-    {id: 0, name: "ipad air 2", price: 20},
-    {id: 1, name: "ipad 2", price: 5},
-  ])
-}
-
+server.route({ method: 'GET', path: '/items', handler: controller.getItems})
+server.route({ method: 'GET', path: '/item/{id}', handler: controller.getItem})
 
 server.register({
     register: Good,
